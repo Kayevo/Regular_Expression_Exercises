@@ -5,6 +5,12 @@ fun main(args: Array<String>) {
 
     val valueB = "across"
     println(initWithA(valueB));
+
+    val valueC = "12123451234"
+    println(verifyPhoneNum(valueC))
+
+    val valueD = "12923451234"
+    println(verifyPhoneNum(valueD))
 }
 
 fun initWithA(_values: String): Boolean{
@@ -20,4 +26,13 @@ fun initWithANoSensCase(_values: String): Boolean{
     var result = pattern.containsMatchIn(_values);
 
     return  result
+}
+
+fun verifyPhoneNum(phoneNum: String): Boolean{
+    var validPhoneNum = false
+
+    val pattern = Regex("[0-9]{2}9[0-9]{8}")
+    validPhoneNum = pattern.matches(phoneNum)
+
+    return validPhoneNum
 }
